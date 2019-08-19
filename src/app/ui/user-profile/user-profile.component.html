@@ -1,0 +1,24 @@
+<div class="box" id="new ">
+  <div *ngIf="auth.user | async; then authenticated else guest">
+          <!-- template will replace this div -->
+  </div>
+</div>
+
+<!-- User NOT logged in -->
+<ng-template #guest class="box">
+  <h4>Olá estranho! </h4>
+  <p class="card-text" style="padding-right: 2px">Entre para acessar seu Livro Caixa</p>
+  <button class="button" routerLink="/login">Entrar</button>
+</ng-template>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="auth.user | async as user">
+    <h4>Bem-vindo de volta!</h4>
+        <i class="fa fa-envelope text-success"  aria-hidden="true"><span > {{ user.email }}</span></i>
+    <p></p>
+    
+    <button class="button" (click)="logout()">Sair</button>
+  </div>
+</ng-template>
+

@@ -1,0 +1,13 @@
+<div class="basic-note">
+     <h4 class="font-weight-bold">{{ note.content }}</h4>
+    <!-- <h3 >Lembretes</h3> -->
+    <span class="text-muted " style="padding-right: 1em">Qtd.: {{ note.hearts || 0 }} </span>
+    <span class="button is-small is-info" (click)='addHeartToNote(note.hearts, 1)'>
+     <i class="fa fa-chevron-up" style="background-color: #80d8ff margin-left: 5px margin-right: 5px" ></i>
+  </span>
+  <span class="button is-small is-info" (click)='addHeartToNote(note.hearts, 2)'>
+    <i class="fa fa-chevron-down" style="margin-left: 5px margin-right: 5px" ></i>
+ </span>
+    <span class="button is-small is-danger" (click)='deleteNote(note?.id)' >Deletar</span>
+    
+</div>
