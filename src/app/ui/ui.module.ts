@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { UserLoginComponent } from './user-login/user-login.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -15,9 +15,13 @@ import { RegistrosComponent } from './registros/registros.component';
 import { RegistroDataService } from '../core/registro-data.service';
 import { RegistroService } from '../core/registros.service';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { RegistroComponent } from './registros/registro/registro.component';
+import { RegistroListComponent } from './registros/registro-list/registro-list.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
-  imports: [CommonModule, RouterModule, ReactiveFormsModule,AngularFireDatabaseModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule,AngularFireDatabaseModule, FormsModule,ToastrModule.forRoot() ],
   declarations: [
     UserLoginComponent,
     HomePageComponent,
@@ -27,7 +31,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     UserProfileComponent,
     UserFormComponent,
     SsrPageComponent,
-    RegistrosComponent
+    RegistrosComponent,
+    RegistroComponent,
+    RegistroListComponent,
 
   ],
   providers:[RegistroDataService, RegistroService],

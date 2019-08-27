@@ -1,9 +1,9 @@
 <!-- <registros-form></registros-form> -->
-<main >
+<!-- <main >
     
     <h3 class="display-5 text-dark">Inserir Registro</h3>
     <hr><br>
-    <!-- aqui é pra adicionar -->
+     aqui é pra adicionar 
     <form [formGroup]="registroForm" *ngIf="newData" (ngSubmit)="onSubmit()">
 
         <label for="categoria">Categoria</label>
@@ -31,7 +31,7 @@
         <button type="submit" class="btn btn-default" >Salvar</button>
 
     </form>
-    <!-- editar -->
+     editar
     <form [formGroup]="registroForm" *ngIf="!newData" (ngSubmit)="edit(registro, registro.key)">
 
         <label for="categoria">Categoria</label>
@@ -59,7 +59,7 @@
         <button type="submit" class="btn btn-default" >Editar</button>
 
     </form>
-    <!-- acaba o editar -->
+    acaba o editar 
     <br>
     <section id="tabs" class="project-tab">
         <h3 class="display-4 text-dark">Registros</h3>
@@ -116,7 +116,7 @@
         </div>
 
     </section>
-</main>
+</main> -->
 <!-- modal -->
 <!-- <div class="modal" id="modalEdit" tabindex="-1" role="dialog">
     <div class="modal-dialog">
@@ -175,3 +175,17 @@
         </div>
     </div> -->
 <!-- </div> -->
+
+<div  style="padding-top:10px;">
+     
+  <div >
+      <div >
+        <p class="lead">Inserir Registro</p><hr>
+        <app-registro></app-registro>
+      </div>
+      <div>
+          <p class="lead">Registros</p>
+          <app-registro-list></app-registro-list>
+      </div>
+    </div>
+  </div>
