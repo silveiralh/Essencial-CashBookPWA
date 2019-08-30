@@ -36,12 +36,13 @@
 
       </div>
     </nav>
-    <div class="tab-content" id="nav-tabContent">
+    <!-- <div infinite-scroll="addItems()" threshold="100" can-load="canLoad"> -->
+    <div class="tab-content " id="nav-tabContent" >
       <div class="tab-pane show active" style=" border-style: solid; border-width: 1px ;
             border-color: lightgray;" id="nav-todos" role="tabpanel" aria-labelledby="nav-todos-tab">
          <div id="no-more-tables">
-          <!-- <div id="scrolltable"> -->
-          <table class="col-md-12 table-hover  table-striped  cf">
+          <!-- <div id="scrolltable"> --><div infinite-scroll="addItems()" threshold="50" can-load="true">
+          <table id="sorttable"class="col-md-12 table-hover tablesorter table-striped  cf">
             <thead class="cf">
               <tr>
                 <th>Data</th>
@@ -53,22 +54,27 @@
               </tr>
             </thead>
             <!-- <div id="scrolltable"> -->
+              
             <tbody>
               <tr *ngFor="let reg of list">
+                  
                 <td data-title="Data" class="text" (click)="onEdit(reg)">{{reg.data_created}}</td>
                 <td data-title="Tipo" class="text" (click)="onEdit(reg)">{{reg.tipo}}</td>
                 <td data-title="Categoria" class="text" (click)="onEdit(reg)">{{reg.categoria}}</td>
                 <td data-title="Descrição" class="text" (click)="onEdit(reg)">{{reg.descricao}}</td>
                 <td data-title="Valor" class="text" (click)="onEdit(reg)">{{reg.valor}}</td>
                 <td><a class="btn text-danger" (click)="onDelete(reg.id)"><i class="fa fa-trash"></i></a></td>
+                    
+
               </tr>
 
               <tr *ngIf="list.length == 0">
                 <td class="lead" colspan="3">No testes found. Start inserting using form.</td>
               </tr>
             </tbody>
-          </table>
           
+          </table></div>
+         
 
           <!-- <table class="col-md-12 table-hover  table-striped table-condensed cf">
             <thead class="cf">
@@ -105,6 +111,8 @@
     </div>
     <!-- </div> -->
 
-  </div>
+  
+  <!-- </div> -->
+</div>
 
 </section>
