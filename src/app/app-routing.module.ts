@@ -7,8 +7,6 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 import { NotesListComponent } from './notes/notes-list/notes-list.component';
 import { UploadPageComponent } from './uploads/upload-page/upload-page.component';
 
-import { SsrPageComponent } from './ui/ssr-page/ssr-page.component';
-import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 
 
 const routes: Routes = [
@@ -17,8 +15,6 @@ const routes: Routes = [
   { path: 'notes', component: NotesListComponent,  canActivate: [AuthGuard] },
   { path: 'uploads',  component: UploadPageComponent,  canActivate: [AuthGuard] },
 
-  { path: 'ssr', component: SsrPageComponent },
-  { path: 'loading-spinner', component: LoadingSpinnerComponent }
 ];
 
 @NgModule({

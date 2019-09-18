@@ -4,7 +4,7 @@
 <input [(ngModel)]="content" placeholder="Add um lembrete" class="input"  name="note">
 
 
-<button class="button is-success" style="margin-top: 1em" (click)="clickHandler()" [disabled]="content?.length < 2 || content?.length > 200">
+<button class="button is-success" style="margin-top: 1em; width:100%;" (click)="clickHandler()" [disabled]="content?.length < 2 || content?.length > 200">
   Add Lembrete
 </button>
 <hr>

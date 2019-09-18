@@ -24,11 +24,15 @@ export class RegistroListComponent implements OnInit {
           id: item.payload.doc.id,
           ...item.payload.doc.data()
         } as Registro;
-      })
+      },
+      console.log(this.list),)
     });
+    
   }
 
-  onEdit(reg: Registro) {
+  onEdit(reg: Registro, $element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     this.service.formData = Object.assign({}, reg);
   }
  
@@ -37,6 +41,10 @@ export class RegistroListComponent implements OnInit {
       this.firestore.doc('registros/' + id).delete();
       this.toastr.warning("Registro deleted from firestore database successfully!","Delete");
     }
+  }
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
 }

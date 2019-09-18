@@ -1,118 +1,39 @@
-<!-- <table class="table table-hover">
-  <thead class="bg-info text-light">
-    <th>Data</th>
-    <th>Tipo</th>
-    <th>Categoria</th>
-    <th>Descrição</th>
-    <th>Valor</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let reg of list">
-      <td (click)="onEdit(reg)">{{reg.data_created}}</td>
-      <td (click)="onEdit(reg)">{{reg.tipo}}</td>
-      <td (click)="onEdit(reg)">{{reg.categoria}}</td>
-      <td (click)="onEdit(reg)">{{reg.descricao}}</td>
-      <td (click)="onEdit(reg)">{{reg.valor}}</td>
-      <td><a class="btn text-danger" (click)="onDelete(reg.id)"><i class="fa fa-trash"></i></a></td>
-    </tr>
+<body>
+    <div #topo></div>
+  <hr>
+  <small class="text-secondary" *ngIf="list.length > 0">Clique no registro para editar!</small>
+  <div id="no-more-tables">
+    <table id="tableRegistros" class="col-md-12 table-hover tablesorter table-striped  cf">
+      <thead class="cf">
+        <tr>
+          <th onclick="sortTable(0)">Data</th>
+          <th onclick="sortTable(1)">Tipo</th>
+          <th>Categoria</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reg of list">
 
-    <tr *ngIf="list.length == 0">
-      <td class="lead" colspan="4">No testes found. Start inserting using form.</td>
-    </tr>
-  </tbody>
-</table> -->
+          <td data-title="Data" class="text" (click)="scrollToElement(topo)"onclick="sortTable(0)">{{reg.data_created}}</td>
+          <td data-title="Tipo" class="text" (click)="scrollToElement(topo)"onclick="sortTable(1)">{{reg.tipo}}</td>
+          <td data-title="Categoria" class="text" (click)="onEdit(reg, topo)">{{reg.categoria}}</td>
+          <td data-title="Descrição" class="text" (click)="onEdit(reg, topo)" >{{reg.descricao}}</td>
+          <td data-title="Valor" class="text" (click)="onEdit(reg, topo)">{{reg.valor}}</td>
+          <td><a class="btn text-danger" (click)="onDelete(reg.id)"><i class="fa fa-trash"></i></a></td>
 
 
-<hr>
-<small class="text-secondary" *ngIf="list.length > 0">Clique no registro para editar!</small>
+        </tr>
 
-<section id="tabs" class="project-tab">
-  <div>
-    <nav>
-      <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="nav-todos-tab" data-toggle="tab" href="#nav-todos" role="tab"
-          aria-controls="nav-todos" aria-selected="true">Todos os Registros</a>
+        <tr *ngIf="list.length == 0">
+          <td class="lead" colspan="3">Nenhum registro foi encontrado.</td>
+        </tr>
+      </tbody>
+    </table>
 
-      </div>
-    </nav>
-    <!-- <div infinite-scroll="addItems()" threshold="100" can-load="canLoad"> -->
-    <div class="tab-content " id="nav-tabContent" >
-      <div class="tab-pane show active" style=" border-style: solid; border-width: 1px ;
-            border-color: lightgray;" id="nav-todos" role="tabpanel" aria-labelledby="nav-todos-tab">
-         <div id="no-more-tables">
-          <!-- <div id="scrolltable"> --><div infinite-scroll="addItems()" threshold="50" can-load="true">
-          <table id="sorttable"class="col-md-12 table-hover tablesorter table-striped  cf">
-            <thead class="cf">
-              <tr>
-                <th>Data</th>
-                <th>Tipo</th>
-                <th>Categoria</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th></th>
-              </tr>
-            </thead>
-            <!-- <div id="scrolltable"> -->
-              
-            <tbody>
-              <tr *ngFor="let reg of list">
-                  
-                <td data-title="Data" class="text" (click)="onEdit(reg)">{{reg.data_created}}</td>
-                <td data-title="Tipo" class="text" (click)="onEdit(reg)">{{reg.tipo}}</td>
-                <td data-title="Categoria" class="text" (click)="onEdit(reg)">{{reg.categoria}}</td>
-                <td data-title="Descrição" class="text" (click)="onEdit(reg)">{{reg.descricao}}</td>
-                <td data-title="Valor" class="text" (click)="onEdit(reg)">{{reg.valor}}</td>
-                <td><a class="btn text-danger" (click)="onDelete(reg.id)"><i class="fa fa-trash"></i></a></td>
-                    
+    <button type="submit" class="button is-info" style="width: 100%; margin-top: 2em;" (click)="scrollToElement(target)">  Voltar ao topo    </button>
+  </div>
 
-              </tr>
-
-              <tr *ngIf="list.length == 0">
-                <td class="lead" colspan="3">No testes found. Start inserting using form.</td>
-              </tr>
-            </tbody>
-          
-          </table></div>
-         
-
-          <!-- <table class="col-md-12 table-hover  table-striped table-condensed cf">
-            <thead class="cf">
-              <tr>
-                <th class="text-dark">Data</th>
-                <th class="text-dark">Categoria</th>
-                <th class="text-dark">Tipo</th>
-                <th class="text-dark">Descrição</th>
-                <th class="text-dark">Valor</th>
-                <th class="text-white">_ _</th>
-              </tr>
-            </thead>
-          </table>
-          <div id="scrolltable">
-            <table>
-              <tbody>
-                <tr *ngFor="let registro of todosRegistros |async">
-                  <td data-title="Data" class="text-dark">{{registro.data_created}}</td>
-                  <td data-title="Categoria" class="text-dark">{{registro.categoria}}</td>
-                  <td data-title="Tipo" class="text-dark">{{registro.tipo}}</td>
-                  <td data-title="Descrição" class="text-dark text-break">{{registro.descricao}}</td>
-                  <td data-title="Valor" class="text-dark">{{registro.valor}}</td>
-                  <td data-title="Editar/Deletar" class="text-dark"><button type="button"
-                      class="btn btn-default fa fa-pencil fa-5" (click)="toggleForm()"></button><button type="button"
-                      class="btn btn-danger fa fa-trash-o fa-5" (click)="delete(registro.key)"></button></td>
-
-                </tr>
-              </tbody>
-            </table> -->
-        <!-- </div> -->
-        </div>
-
-      </div>
-    </div>
-    <!-- </div> -->
-
-  
-  <!-- </div> -->
-</div>
-
-</section>
+</body>

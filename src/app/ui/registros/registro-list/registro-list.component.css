@@ -2,6 +2,10 @@ th, td {
   padding: 10px;
   text-align: center;
 }
+a{
+	text-decoration: none;
+	font-style: normal;
+}
 hr {
     background: linear-gradient(to right,#80d8ff, #e981fc);
   height: 2px;
@@ -13,7 +17,7 @@ hr {
 	#no-more-tables table, 
 	#no-more-tables thead, 
 	#no-more-tables tbody, 
-	#no-more-tables th, 
+	
 	#no-more-tables td, 
 	#no-more-tables tr { 
 		display: block; 
@@ -60,3 +64,11 @@ hr {
 #scrolltable table { border-collapse: inherit; }
 #scrolltable tr:nth-child(even) { background: #EEE; }
 #scrolltable th div { position: absolute;  }
+#scrollArea {
+    height: 100%;
+    overflow: auto;
+  }
+ 
+  #bottom {
+    display: block;
+  }

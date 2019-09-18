@@ -1,14 +1,10 @@
-<!doctype html>
+<hr>
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
   <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
   <div style="padding-bottom: 1em"><label for="data_created">Data</label>
       <input id="date" type="date" name="data_created" #data_created="ngModel" [(ngModel)]="service.formData.data_created" class="form-control"
       pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
 </div>
-    <!-- <input type="text" name="data_created" #data_created="ngModel" [(ngModel)]="service.formData.data_created" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span> -->
-  
-  <!-- <input type="hidden" name="data_created" #data_created="ngModel" [(ngModel)]="service.formData.data_created"> -->
-  
   <div class="form-group">
     <label for="categoria">Categoria</label>
     <select class="form-group" [(ngModel)]="service.formData.categoria" #tipo="ngModel" class="form-control" name="categoria"
@@ -17,10 +13,6 @@
       <option value="Cosmeticos"> Cosméticos</option>
       <option value="Produtos em Geral"> Produtos em geral</option>
     </select>
-    <div class="form-group">
-      <!-- <div *ngIf="categoria.invalid && categoria.touched" class="validation-error">Selecione a categoria do registro.</div> -->
-
-    </div>
   </div>
 
   <div class="form-group">
@@ -46,28 +38,7 @@
     <input name="valor" #valor="ngModel" [(ngModel)]="service.formData.valor" class="form-control" placeholder="Valor">
   </div>
   <div class="form-group">
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
+    <button type="submit" [disabled]="form.invalid" class="button is-success" style="width: 100%;">  <span>Adicionar</span>    </button>
   </div>
 
 </form>
-<!-- <form>
-  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
-  <div class="form-group">
-    <input name="descricao" #descricao="ngModel" [(ngModel)]="service.formData.descricao" class="form-control" placeholder="descricao" required>
-    <div *ngIf="descricao.invalid && descricao.touched" class="validation-error">Escolha uma opção.</div>
-  </div>
-  <div class="form-group">
-    <input name="valor" #valor="ngModel" [(ngModel)]="service.formData.valor" class="form-control" placeholder="valor" required>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input name="categoria" #categoria="ngModel" [(ngModel)]="service.formData.categoria" class="form-control" placeholder="categoria" required>
-    </div>
-    <div class="form-group  col-md-6">
-      <input name="tipo" #tipo="ngModel" [(ngModel)]="service.formData.tipo" class="form-control" placeholder="tipo">
-    </div>
-  </div>
-  <div class="form-group">
-    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">SUBMIT</button>
-  </div>
-</form> -->
