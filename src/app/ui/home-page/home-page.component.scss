@@ -1,6 +1,26 @@
 p{
     padding-left: 0.5em;
 } 
-h1{
-    text-align: center;
+
+    h1{
+        display: block;
+        font-size: 2em;
+        font-weight: bold;
+    
+    }
+a{
+    text-decoration: none;
+
+}
+a:hover{
+    color: #ac81fc;
+    
+}
+.panel-default{
+    background-color: #ffffff1c;
+    border:0px;
+}
+
+.panel-heading{
+    background-color: #f7f7f7;
 }

@@ -1,6 +1,12 @@
 <body>
     <div #topo></div>
   <hr>
+  <div class="input-group">
+    <input type="text" class="form-control" id="inputFiltro" onkeyup="filtro()" placeholder="Filtrar descrição" aria-label="Filtrar descrição" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-danger btn-sm" type="button" aria-label="Limpar campo"><span class="glyphicon glyphicon-remove"></span></button>
+    </div>
+  </div>
   <small class="text-secondary" *ngIf="list.length > 0">Clique no registro para editar!</small>
   <div id="no-more-tables">
     <table id="tableRegistros" class="col-md-12 table-hover tablesorter table-striped  cf">

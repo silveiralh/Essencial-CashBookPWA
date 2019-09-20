@@ -105,7 +105,7 @@ export class AuthService {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then(credential => {
-        this.notify.update('Welcome back!', 'success');
+        this.notify.update('Login realizado!', 'success');
         return this.updateUserData(credential.user);
       })
       .catch(error => this.handleError(error));

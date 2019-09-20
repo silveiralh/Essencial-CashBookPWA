@@ -48,7 +48,6 @@
 
     <span *ngIf="userForm.valid" class="help is-success">Informações válidas</span>
 
-    <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
-    <p *ngIf="passReset" class="help is-info">Reset da senha solicitado, por favor verifique seu email..</p>
+    
 
 </form>

@@ -1,4 +1,4 @@
-nav {
+nav {padding-left: 4em;
     border-bottom: 1px solid #E4E4E4;
     box-shadow: 0 0 4px rgba(0, 0, 0, .1), 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -10,6 +10,14 @@ nav {
 }
 
 .navbar-menu {
-    padding-right: 3em;
+    
+    align-content: center;
+    
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #ac81fc;
     
 }

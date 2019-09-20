@@ -31,15 +31,17 @@ export class RegistroListComponent implements OnInit {
   }
 
   onEdit(reg: Registro, $element): void {
+    if (confirm("Tem certeza que deseja editar esse registro?")) {
     console.log($element);
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     this.service.formData = Object.assign({}, reg);
+    }
   }
  
   onDelete(id: string) {
-    if (confirm("Are you sure to delete this record?")) {
+    if (confirm("Tem certeza que deseja excluir esse registro?")) {
       this.firestore.doc('registros/' + id).delete();
-      this.toastr.warning("Registro deleted from firestore database successfully!","Delete");
+      this.toastr.warning("Registro deletado com sucesso!","Delete");
     }
   }
   scrollToElement($element): void {

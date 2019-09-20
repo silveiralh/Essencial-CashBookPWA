@@ -38,7 +38,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6
 {
     font-family: $heading-font;
     font-weight: 300 !important;
@@ -61,7 +61,7 @@ a {
 .content {
     // min-height: 70vh;
     // padding: 2vw;
-    // flex: 1
+     flex: 1
 }
 
 .videoWrapper {
@@ -204,4 +204,8 @@ app-root:empty+.loading {
 
 .button {
     margin-right: 5px;
+}
+a:hover{
+    color: #e981fc;
+    
 }
