@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDfq6TvEbs0IWSDAAGhysRqvf2-UGTpq2A",
-    authDomain: "livrocaixapwa.firebaseapp.com",
-    databaseURL: "https://livrocaixapwa.firebaseio.com",
-    projectId: "livrocaixapwa",
+    apiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    authDomain: "XXXXXXXXXXXXXXXXXXXX",
+    databaseURL: "XXXXXXXXXXXXXXXXXXX",
+    projectId: "XXXXXXXXXXXXXXXXa",
     storageBucket: "",
-    messagingSenderId: "503236549484",
-    appId: "1:503236549484:web:af71dc7a900ab113"
+    messagingSenderId: "XXXXXXXXXXXXXX",
+    appId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   }
 };
 
