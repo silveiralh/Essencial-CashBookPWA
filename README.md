@@ -4,8 +4,6 @@
 
 1.  Run
 
-- `git clone https://github.com/codediodeio/angular-firestarter.git firestarter`
-- `cd firestarter`
 - `npm install`
 
 2.  Create a project at https://firebase.google.com/ and grab your web config:
